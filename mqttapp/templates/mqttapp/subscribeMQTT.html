@@ -1,0 +1,78 @@
+{% extends 'mqttapp/base.html' %}
+
+{% block title %}Subscribe Data{% endblock %}
+
+{% block page_name %}Subscribe{% endblock %}
+
+{% load static %}
+
+{% block content %}
+   
+    <link rel="stylesheet" href="{% static 'css/subscribe.css' %}">
+
+      <main data-page="subscribeMQTT">
+        <!-- Group 100Y1 -->
+        <section id="100Y1-section">
+            <h2>100Y1 (Valve)</h2>
+            <div id="100Y1-MaxTime">Max Time: --</div>
+            <div id="100Y1-CurrTime">Current Time: --</div>
+            <div id="100Y1-Count">Count: --</div>
+            <div id="100Y1-Status">Status: --</div>
+            <div id="100Y1-Manual">Manual: --</div>
+            <div id="100Y1-Open">Open: --</div>
+            <div id="100Y1-Ack">Ack: --</div>
+
+
+
+        </section>
+
+        <!-- Group 100Y2 -->
+        <section id="100Y2-section">
+            <h2>100Y2 (Valve)</h2>
+            <div id="100Y2-MaxTime">Max Time: --</div>
+            <div id="100Y2-CurrTime">Current Time: --</div>
+            <div id="100Y2-Count">Count: --</div>
+            <div id="100Y2-Status">Status: --</div>
+            <div id="100Y2-Manual">Manual: --</div>
+            <div id="100Y2-Open">Open: --</div>
+            <div id="100Y2-Ack">Ack: --</div>
+
+        </section>
+
+        <!-- Group 100M1 -->
+        <section id="100M1-section">
+            <h2>100M1 (Motor)</h2>
+            <div id="100M1-MaxTime">Max Time: --</div>
+            <div id="100M1-CurrTime">Current Time: --</div>
+            <div id="100M1-Count">Count: --</div>
+            <div id="100M1-Status">Status: --</div>
+            <div id="100M1-Manual">Manual: --</div>
+            <div id="100M1-Start">Start: --</div>
+            <div id="100M1-Ack">Ack: --</div>
+           
+        </section>
+
+        <!-- Analog Data -->
+        <section id="analog-section">
+            <h2>Analog Sensors</h2>
+            <div id="100LT01-value">Level Transmitter (100LT01): --</div>
+            <div id="100TT01-value">Temperature Transmitter (100TT01): --</div>
+          
+        </section>
+    </main>
+
+    
+
+ 
+{% endblock %}
+
+
+
+{% block extra_scripts %}
+ 
+<script type="module" src="{% static 'js/mqttValve.js' %}"></script>
+<script type="module" src="{% static 'js/mqttMotor.js' %}"></script>
+<script type="module" src="{% static 'js/mqttAnalog.js' %}"></script>
+<script type="module" src="{% static 'js/globalMQTT.js' %}"></script>
+
+{% endblock %}

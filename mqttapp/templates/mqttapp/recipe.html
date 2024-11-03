@@ -1,0 +1,99 @@
+{% extends 'mqttapp/base.html' %}
+{% block title %}
+<title>Recipe</title>
+{% endblock %}
+
+{% block page_name %}Recipe{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- Data Table -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<style>
+    /* Define a CSS class for the header row */
+    .table-header {
+        background-color: #007BFF;
+        /* Replace with your preferred color code */
+        color: white;
+        /* Text color for header cells */
+    }
+
+    /* Increase specificity to ensure the style is applied */
+    table#recipe-table th.action-button {
+        width: 100px !important;
+    }
+</style>
+
+<div class="container">
+    <h1 style="text-align: center;">Recipe</h1>
+
+    <table id="recipe-table" class="display" style="width:100%">
+        <thead>
+            <tr class="table-header"> <!-- Apply the CSS class to the header row -->
+                <th>ID</th>
+                <th>Recipe No</th>
+                <th>Recipe Name</th>
+                <th>Mixing Speed</th>
+                <th>Mixing Temp</th>
+                <th>Mixing Time</th>
+                <th></th> <!-- Placeholder cell for search input space -->
+                <th>Edit</th> <!-- Add a new column for actions -->
+                <th>Delete</th> <!-- Add a new column for actions -->
+                <th>TransferPLC</th> <!-- Add a new column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in filter.qs %}
+            <tr>
+                <td>{{ recipe.id }}</td>
+                <td>{{ recipe.recipeno }}</td>
+                <td>{{ recipe.recipename }}</td>
+                <td>{{ recipe.mixingspeed }}</td>
+                <td>{{ recipe.mixingtemp }}</td>
+                <td>{{ recipe.mixingtime }}</td>
+                <td></td> <!-- Placeholder cell for search input space -->
+                <td class="action-button">
+                    <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-primary btn-sm"
+                        style="width: 100px;">Edit</a>
+                </td>
+                <td class="action-button">
+                    <a href="/delete_recipe/{{recipe.id }}" onclick="return confirm('Are you sure want to delete?')"
+                        class="btn btn-danger btn-sm" style="width: 100px" ;>Delete</a>
+                </td>
+               
+                <td class="action-button">
+                    <button class="btn btn-success btn-sm" style="width: 150px"
+                        onclick="transferRecipeToPLC('{{ recipe.id }}', '{{ recipe.recipeno }}', '{{ recipe.recipename|escapejs }}', '{{ recipe.mixingspeed }}', '{{ recipe.mixingtemp }}', '{{ recipe.mixingtime }}')">
+                        TransferPLC
+                    </button>
+                </td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+<!--Data table  -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+<script src="{% static 'js/recipe_datatable.js' %}"></script>
+<script src="{% static 'js/recipepublish.js' %}"></script>
+
+{% endblock %}

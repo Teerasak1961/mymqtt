@@ -1,0 +1,58 @@
+{% extends 'mqttapp/base.html' %}
+{% block title %}
+<title>Current Recipe</title>
+{% endblock %}
+
+{% block page_name %}Current Recipe{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<h2 style="text-align: center;">Current Recipe </h2>
+
+<p></p>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">RecipeNo</th>
+      <th scope="col">RecipeName</th>
+      <th scope="col">Mixing Speed</th>
+      <th scope="col">Mixing Temp.</th>
+      <th scope="col">Mixing Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-secondary">
+      <td id="Recipe-ID"></td>
+      <td id="Recipe-No"></td>
+      <td id="Recipe-Name"></td>
+      <td id="Recipe-MixingSpeed"></td>
+      <td id="Recipe-MixingTemp"></td>
+      <td id="Recipe-MixingTime"></td>
+    </tr>
+
+
+
+  </tbody>
+</table>
+
+
+
+
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+
+<script type="module" src="{% static 'js/mqttRecipe.js' %}"></script>
+<script type="module" src="{% static 'js/globalMQTT.js' %}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'mqttapp/base.html' %}
+{% block title %}
+<title>Tank System</title>
+{% endblock %}
+
+{% block page_name %}home{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<main data-page="home">
+
+    <link rel="stylesheet" href="{% static 'css/tank.css' %}">
+
+    <div class="tank-system">
+        <div class="svg-container">
+
+            <img id="tank" src="{% static 'img/Tanks/tank.svg' %}" alt="Tank">
+
+            <!-- 100Y1 -->
+            <button id="V100Y1" class="btnWin" value="100Y1" data-url="/popupvalve/" data-left="300" data-top="200">
+                <img id="valve-100Y1" src="{% static 'img/Valves/Valve0.svg' %}" alt="Valve" width="80px" height="80px">
+            </button>
+
+            <!-- 100Y2 -->
+            <button id="V100Y2" class="btnWin" value="100Y2" data-url="/popupvalve/" data-left="300" data-top="200">
+                <img id="valve-100Y2" src="{% static 'img/Valves/Valve0.svg' %}" alt="Valve" width="80px" height="80px">
+            </button>
+
+            <button id="M100M1" class="btnWin" value="100M1" data-url="/popupmotor/" data-left="100" data-top="200">
+                <img id="motor-100M1" class="motorImage" src="{% static 'img/Pumps/Pump0.svg' %}" alt="Pump"
+                    width="120px" height="120px">
+            </button>
+
+
+
+
+
+            <!-- Pipe horizontal top -->
+            <img id="pipehor1" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehor2" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehor3" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehor4" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehor5" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehor6" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+
+            <!-- Pipe horizontal bottom -->
+            <img id="pipehorb1" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehorb2" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehorb3" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehorb4" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehorb5" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+            <img id="pipehorb6" src="{% static 'img/Pipes/PipeHorizontal.svg' %}" alt="PipeHor">
+
+            <img id="pipever-top" src="{% static 'img/Pipes/PipeVertical.svg' %}" alt="PipeVer">
+            <img id="pipever-bottom" src="{% static 'img/Pipes/PipeVertical.svg' %}" alt="PipeVer">
+            <img id="bend1" src="{% static 'img/Pipes/90DegreeBend1.svg' %}" alt="bend1">
+            <img id="flangetop" src="{% static 'img/Pipes/FlangeWithBoltsTop.svg' %}" alt="FlangeTop">
+            <img id="flangebelow" src="{% static 'img/Pipes/FlangeWithBoltsBelow.svg' %}" alt="Flangebelow">
+
+
+            <!-- Temperature Value: 100TT01 -->
+            <div id="temperature-value">
+                <p>100TT01: <span id="100TT01-value">-</span> °C</p>
+            </div>
+
+            <!-- Level Value: 100LT01 -->
+            <div id="level-value">
+                <p>100LT01: <span id="100LT01-value">-</span> %</p>
+            </div>
+
+            
+
+             <div id="tankFill" class="tank-container">
+                <div id="tankFill-inner" class="tank-fill"></div>
+            </div>
+            
+
+
+
+            <p class="Status">M1: <span id="100M1-Status">--</span></p>
+            <p class="Status">Y1: <span id="100Y1-Status">--</span></p>
+            <p class="Status">Y2: <span id="100Y2-Status">--</span></p>
+
+
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+<script src="{% static 'js/main.js' %}"></script>
+<script type="module" src="{% static 'js/mqttValve.js}"></script>
+<script type="module" src="{% static 'js/mqttMotor.js}"></script>
+<script type="module" src="{% static 'js/mqttAnalog.js}"></script>
+<script type="module" src="{% static 'js/globalMQTT.js' %}"></script>
+
+
+
+{% endblock %}

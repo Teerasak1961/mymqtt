@@ -1,0 +1,247 @@
+{% extends 'mqttapp/base.html' %}
+
+{% block title %}Publish Data{% endblock %}
+
+{% block page_name %}Publish{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/popup.css' %}">
+
+
+<!-- Control panel for 100M1 -->
+
+<div class="control-panel">
+
+    <h2 style="text-align: center;">Motor 100M1</h2>
+
+    <div id="mode" class="mode">
+        <p>Mode</p>
+        <span>
+            <button  onclick="publishMqtt('100M1/Manual', false)" id="btnAuto" type="button" class="btn btn-secondary"
+               >Auto</button>
+        </span>
+        <button  onclick="publishMqtt('100M1/Manual', true)" id="btnManual" type="button" class="btn btn-secondary"
+           >Manual</button>
+    </div>
+
+    <div id="command" class="command">
+        <p>Command</p>
+        <span>
+            <button onclick="publishMqtt('100M1/Start', true)" id="btnStart" type="button" class="btn btn-secondary"
+                >Start</button>
+        </span>
+        <span>
+            <button  onclick="publishMqtt('100M1/Start', false)" id="btnStop" type="button" class="btn btn-secondary"
+               >Stop</button>
+        </span>
+    </div>
+
+    <div id="reset" class="reset">
+        <p>Command Reset</p>
+
+        <span>
+            <button  onclick="publishMqtt('100M1/Ack', false)"  id="btnAck" type="button" class="btn btn-secondary"
+               >Ack.</button>
+        </span>
+        <span>
+            <button onclick="publishMqtt('100M1/Reset', true)" id="btnReset" type="button" class="btn btn-secondary"
+                >Reset</button>
+        </span>
+    </div>
+
+    <br />
+
+    <div style="text-align: center;">
+        <input type="number" id="100M1-Maxtime" placeholder="Enter MaxTime">
+        <button onclick="setMaxTime('100M1')">Set MaxTime</button>
+    </div>
+
+</div>
+<hr>
+
+<!-- Control panel for 100Y1 -->
+<div class="control-panel">
+    <h2 style="text-align: center;">Valve 100Y1</h2>
+
+
+    <!-- Buttons for Control -->
+
+    <div id="mode" class="mode">
+        <p>Mode</p>
+        <span>
+            <button id="btnAuto" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y1/Manual', false)">Auto</button>
+        </span>
+        <span>
+            <button id="btnManual" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y1/Manual', true)">Manual</button>
+        </span>
+    </div>
+
+
+    <div id="command" class="command">
+        <p>Command</p>
+        <span>
+            <button id="btnOpen" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y1/Open', true)">Open</button>
+        </span>
+        <span>
+            <button id="btnClosed" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y1/Open', false)">Closed</button>
+        </span>
+
+    </div>
+
+    <div id="reset" class="reset">
+        <p>Command Reset</p>
+
+        <span>
+            <button id="btnAck" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y1/Ack', false)">Ack.</button>
+        </span>
+        <span>
+            <button id="btnReset" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y1/Reset', true)">Reset</button>
+        </span>
+    </div>
+    <br />
+
+    <div style="text-align: center;">
+        <input type="number" id="100Y1-Maxtime" placeholder="Enter MaxTime">
+        <button onclick="setMaxTime('100Y1')">Set MaxTime</button>
+    </div>
+
+</div>
+
+<hr>
+
+<!-- Control panel for 100Y2 -->
+<div class="control-panel">
+    <h2 style="text-align: center;">Valve 100Y2</h2>
+
+
+    <!-- Buttons for Control -->
+
+    <div id="mode" class="mode">
+        <p>Mode</p>
+        <span>
+            <button id="btnAuto" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y2/Manual', false)">Auto</button>
+        </span>
+        <span>
+            <button id="btnManual" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y2/Manual', true)">Manual</button>
+        </span>
+    </div>
+
+
+    <div id="command" class="command">
+        <p>Command</p>
+        <span>
+            <button id="btnOpen" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y2/Open', true)">Open</button>
+        </span>
+        <span>
+            <button id="btnClosed" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y2/Open', false)">Closed</button>
+        </span>
+
+    </div>
+
+
+
+    <div id="reset" class="reset">
+        <p>Command Reset</p>
+
+        <span>
+            <button id="btnAck" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y2/Ack', false)">Ack.</button>
+        </span>
+        <span>
+            <button id="btnReset" type="button" class="btn btn-secondary"
+                onclick="publishMqtt('100Y2/Reset', true)">Reset</button>
+        </span>
+    </div>
+    <br />
+
+    <div style="text-align: center;">
+        <input type="number" id="100Y2-Maxtime" placeholder="Enter MaxTime">
+        <button onclick="setMaxTime('100Y2')">Set MaxTime</button>
+    </div>
+
+</div>
+
+
+<script type="module">
+    // Establish WebSocket connection
+    const mqttSocket = new WebSocket(`ws://${window.location.host}/ws/mqtt/`);
+
+    mqttSocket.onopen = () => {
+        console.log('WebSocket connection established');
+    };
+
+    mqttSocket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log('Received:', data);
+
+        // Handle response messages
+        if (data.status === 'error') {
+            console.error('MQTT Error:', data.message);
+            alert(`MQTT Error: ${data.message}`);
+        }
+    };
+
+    mqttSocket.onerror = (error) => {
+        console.error('WebSocket error:', error);
+    };
+
+    mqttSocket.onclose = () => {
+        console.log('WebSocket connection closed');
+    };
+
+    // Function to publish MQTT messages
+    function publishMqtt(topic, value) {
+        if (mqttSocket.readyState === WebSocket.OPEN) {
+            const message = JSON.stringify({ topic: topic, message: value });
+            mqttSocket.send(message);
+            console.log(`Publishing to ${topic}: ${value}`);
+        } else {
+            console.error('WebSocket is not open');
+            alert('Connection lost. Please refresh the page.');
+        }
+    }
+
+    // Function to set MaxTime for a specific topic
+    function setMaxTime(topic) {
+        const maxTimeElement = document.getElementById(`${topic}-Maxtime`);
+        const maxTime = parseInt(maxTimeElement.value);
+        if (!isNaN(maxTime)) {
+            publishMqtt(`${topic}/Maxtime`, maxTime);
+        } else {
+            alert('Please enter a valid integer for MaxTime');
+        }
+    }
+
+    // Attach functions to window object for global scope
+    window.publishMqtt = publishMqtt;
+    window.setMaxTime = setMaxTime;
+</script>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block extra_scripts %}
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,53 @@
+{% extends 'mqttapp/base.html' %}
+{% block title %}
+<title>Add Recipe</title>
+{% endblock %}
+
+{% block page_name %}Add Recipe{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+
+<div class="container">
+    <h1 class="my-4" style="text-align: center;" >Add New Recipe</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3 ms-5" >
+            <label for="recipeno" class="me-5"><strong>Recipe Number:</strong></label>
+            {{ form.recipeno }}
+        </div>
+        <div class="mb-3 ms-5" >
+            <label for="recipename" class="me-5"><strong>Recipe Name: &nbsp;&nbsp;&nbsp; </strong></label>
+            {{ form.recipename }}
+        </div>
+        <div class="mb-3 ms-5" >
+            <label for="mixingspeed" class="me-5"><strong>Mixing Speed:&nbsp;&nbsp;&nbsp;</strong></label>
+            {{ form.mixingspeed }}
+        </div>
+        <div class="mb-3 ms-5" >
+            <label for="mixingtemp" class="me-2"><strong>Mixing Temperature:&nbsp;</strong></label>
+            {{ form.mixingtemp }}
+        </div>
+        <div class="mb-3 ms-5" >
+            <label for="mixingtime" class="me-5" ><strong>Mixing Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
+            {{ form.mixingtime }}
+        </div>
+        <button  type="submit" class="btn btn-primary" style="margin-left:20% ;">Add Recipe</button>
+    </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+
+
+{% endblock %}

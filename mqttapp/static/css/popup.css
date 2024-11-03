@@ -1,0 +1,55 @@
+#bg_color {
+  background-color: lightgray;
+}
+
+
+.btn-secondary,
+.btn-danger,
+.btn-success {
+  width: 80px;
+}
+
+.btn-primary {
+  width: 125px;
+}
+
+.mode,
+.command,
+.reset {
+  text-align: center;
+  font-size: medium;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+
+.time {
+  display: flex;
+  justify-content: center;
+}
+
+.marginleft {
+  text-align: center;
+  /* If you still need left margin */
+  margin-left: 10px; /* adjust value as needed */
+}
+
+
+.marginright {
+  margin-right: 5px;
+}
+
+
+
+
+
+.helptext {
+  color: blue;
+}
+
+#valve-manual,
+#valve-open,
+#manual_start_value,
+#valve-ack {
+  display: none;
+}

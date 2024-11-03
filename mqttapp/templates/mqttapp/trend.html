@@ -1,0 +1,40 @@
+{% extends 'mqttapp/base.html' %}
+
+{% block title %}Trend{% endblock %}
+
+{% block page_name %}Trend{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+
+<h3 style="text-align: center;">Trend </h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-10 mx-auto mt-5">
+
+            <canvas id="trendChart" width="400" height="200"></canvas>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+
+<script type="module" src="{% static 'js/mqttAnalog.js' %}"></script>
+<script type="module" src="{% static 'js/globalMQTT.js' %}"></script>
+<script src="{% static 'js/trend.js' %}"></script>
+
+{% endblock %}
