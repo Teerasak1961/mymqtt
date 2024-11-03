@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c(e$r+4s*06kc89&o3dhv+o1z!42c6u+dlm^-2@m@c=8+hzgm1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mymqtt-y8q5.onrender.com', 'www.your-domain.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mymqtt-y8q5.onrender.com', 'ec2-3-27-217-112.ap-southeast-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
 
 
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise here
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -156,7 +157,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'mqttapp/static']  # Where your app's static files are stored
 
-
+# Enable WhiteNoise storage backend to compress static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
