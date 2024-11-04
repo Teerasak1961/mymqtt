@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,10 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c(e$r+4s*06kc89&o3dhv+o1z!42c6u+dlm^-2@m@c=8+hzgm1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['mymqtt-y8q5.onrender.com', 'ec2-3-27-217-112.ap-southeast-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = ['3.27.217.112','ec2-3-27-217-112.ap-southeast-2.compute.amazonaws.com' ,'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -47,7 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise here
+     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,8 +89,8 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('redis://red-csjcit5svqrc73eqrup0:6379',6379)],
-         #  "hosts": [('127.0.0.1', 6379)],     # local host
+      #  "hosts": [('127.0.0.1', 6379)],     # local host
+        "hosts": [os.getenv('REDIS_URL')],
         },
     },
 }
@@ -146,21 +150,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # or any other directory outside of STATICFILES_DIRS
-
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'mqttapp/static',  # Path to your static files in the app
+    os.path.join(BASE_DIR, 'mqttapp', 'static'),
 ]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'mqttapp/static']  # Where your app's static files are stored
-
-# Enable WhiteNoise storage backend to compress static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+  
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
