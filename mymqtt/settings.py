@@ -12,10 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c(e$r+4s*06kc89&o3dhv+o1z!42c6u+dlm^-2@m@c=8+hzgm1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['3.27.217.112','ec2-3-27-217-112.ap-southeast-2.compute.amazonaws.com' ,'mymqtt-y8q5.onrender.com', '127.0.0.1']
 
@@ -90,7 +89,7 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
       #  "hosts": [('127.0.0.1', 6379)],     # local host
-        "hosts": [os.getenv('REDIS_URL')],
+        "hosts":  [('rediss://red-csjcit5svqrc73eqrup0:Y3Bc3C9CKTkd53yl33fmX9Luk1ZKxDTt@oregon-redis.render.com:6379')],
         },
     },
 }
