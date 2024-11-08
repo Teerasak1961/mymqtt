@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Drive_Pump" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 189" style="enable-background:new 0 0 300 189;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FF0007;stroke:#8C8C91;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#FF0007;}
+	.st2{fill:#FF0007;stroke:#7C7C7B;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:#FF0007;stroke:#646567;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#FF0007;stroke:#8C8C91;stroke-width:0.75;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill:#FF0007;stroke:#575756;stroke-width:0.75;stroke-miterlimit:10;}
+	.st6{fill:#FF0007;stroke:#AFAFAE;stroke-width:0.75;stroke-miterlimit:10;}
+</style>
+<g id="Motor">
+	<g id="Housing_2_">
+		<rect id="Shape_11_" x="30.5" y="41.2" class="st0" width="113.6" height="109.6"/>
+		<rect id="Reflection_4_" x="31.3" y="52.7" class="st1" width="112.3" height="18.6"/>
+	</g>
+	<g id="Cover_Left_Side_1_">
+		<path id="Shape_9_" class="st0" d="M2.5,48.1c0,0,0.5-8.9,28.1-8.9v113.5c-14,0-26.8-2.5-28.1-8.9V48.1z"/>
+		<path id="Reflection_2_" class="st1" d="M29.6,70.3c-21.4,0-26.1,2.6-26.1,2.6V56c0,0,0-5.2,26.1-5.2V70.3z"/>
+	</g>
+	<path id="Cooling_Fins" class="st1" d="M137.1,63.2H31.5v-4.4h105.6V63.2z M137.1,67.5H31.5v4.4h105.6V67.5z M137.1,76.3H31.5v4.4
+		h105.6V76.3z M137.1,85H31.5v4.4h105.6V85z M137.1,93.7H31.5v4.4h105.6V93.7z M137.1,102.5H31.5v4.4h105.6V102.5z M137.1,111.2
+		H31.5v4.4h105.6V111.2z M137.1,119.9H31.5v4.4h105.6V119.9z M137.1,128.7H31.5v4.4h105.6V128.7z"/>
+	<rect id="Reflection_Line_5_" x="30.9" y="41.5" class="st1" width="0.7" height="108.9"/>
+	<g id="Electric_Box">
+		<rect id="Shape_1_" x="86.8" y="20.5" class="st0" width="49.8" height="30.4"/>
+		<path id="Shadows" class="st2" d="M144.1,41.2V46c-3.4,4.2-7.5,4.8-7.5,4.8v-9.6C136.6,41.2,144.1,41.2,144.1,41.2z M136.6,28.6
+			H86.8v2h49.8V28.6z"/>
+		<rect id="Cover_2_" x="85.1" y="24.3" class="st0" width="53.2" height="4.2"/>
+		<g id="Electric_Connection_Right">
+			<polygon id="Nut_6_" class="st0" points="116.9,47.1 112.6,39.7 116.9,32.3 125.4,32.3 129.7,39.7 125.4,47.1 			"/>
+			<circle id="Ring_1_" class="st0" cx="121.2" cy="39.7" r="5.7"/>
+			<circle id="Cover_1_" class="st3" cx="121.2" cy="39.7" r="4.4"/>
+		</g>
+		<g id="Electric_Connection_Left">
+			<polygon id="Nut_5_" class="st0" points="98,47.1 93.7,39.7 98,32.3 106.5,32.3 110.8,39.7 106.5,47.1 			"/>
+			<circle id="Ring" class="st0" cx="102.2" cy="39.7" r="5.7"/>
+			<circle id="Cover" class="st3" cx="102.2" cy="39.7" r="4.4"/>
+		</g>
+	</g>
+</g>
+<g id="Pump">
+	<g id="Flange_Right">
+		<g id="Flange_5_">
+			<polygon id="Shape_29_" class="st4" points="297.6,142.6 296.2,143.9 288.6,143.9 287.2,142.6 287.2,50.4 288.6,49.1 296.2,49.1 
+				297.6,50.4 			"/>
+			<rect id="Reflection_18_" x="288.6" y="58.9" class="st1" width="7.6" height="16.1"/>
+			<polyline id="Edge_Right_5_" class="st4" points="296.2,49.1 297.6,50.4 297.6,142.6 296.2,143.9 			"/>
+			<polyline id="Edge_Left_5_" class="st4" points="288.6,143.9 287.2,142.6 287.2,50.4 288.6,49.1 			"/>
+		</g>
+		<g id="Pipe_4_">
+			<rect id="Shape_28_" x="276.7" y="64.1" class="st0" width="10.6" height="63.7"/>
+			<path id="Reflection_17_" class="st1" d="M286.4,70.6h-9.2v10.9c0,0,7.4,0,9.2,0V70.6z"/>
+		</g>
+		<g id="Connection_Housing_2">
+			<rect id="Shape_30_" x="270.6" y="48.5" class="st0" width="6.1" height="94.9"/>
+			<rect id="Reflection_19_" x="271.1" y="61.3" class="st1" width="5" height="16.1"/>
+		</g>
+	</g>
+	<g id="Housing_2">
+		<path id="Shape" class="st0" d="M262.8,156.8H219V35.1h43.8c4.3,0,7.7,3.5,7.7,7.7V149C270.6,153.3,267.1,156.8,262.8,156.8z"/>
+		<rect id="Reflection_12_" x="219.7" y="47.6" class="st1" width="50.2" height="20.7"/>
+	</g>
+	<g id="Flange_Housings">
+		<rect id="Shape_20_" x="209.5" y="31" class="st0" width="9.6" height="129.9"/>
+		<rect id="Reflection_11_" x="209.9" y="44.3" class="st1" width="8.6" height="22.1"/>
+	</g>
+	<g id="Housing_1">
+		<rect id="Shape_6_" x="160.2" y="48.5" class="st0" width="49.3" height="94.9"/>
+		<rect id="Reflection_8_" x="160.7" y="58.3" class="st1" width="48.2" height="16.1"/>
+	</g>
+	<g id="Flange_Top">
+		<g id="Flange_6_">
+			<polygon id="Shape_33_" class="st4" points="287.9,13.6 289,12.5 289,3.5 287.9,2.4 211.2,2.4 210.1,3.5 210.1,12.5 211.2,13.6 
+							"/>
+			<rect id="Reflection_22_" x="218.2" y="3.5" class="st1" width="13.4" height="8.9"/>
+			<polyline id="Edge_Bottom_2_" class="st4" points="210.1,12.5 211.2,13.6 287.9,13.6 289,12.5 			"/>
+			<polyline id="Edge_Top_2_" class="st4" points="289,3.5 287.9,2.4 211.2,2.4 210.1,3.5 			"/>
+		</g>
+		<g id="Connection_Pipe_2_">
+			<path id="Shape_32_" class="st1" d="M267.3,78.5c0,0-6.4,7.7-17.7,7.7c-11.4,0-17.7-7.7-17.7-7.7l-1.7-64.9H269L267.3,78.5z"/>
+			<path id="Reflection_21_" class="st1" d="M241.6,84.9c-3.5-1.2-6-3.1-6-3.1l-1.4-67.7h6.6C240.8,14.1,241.6,84.3,241.6,84.9z"/>
+			<polyline id="Outline_2_" class="st4" points="231.8,78.5 230.1,13.6 269,13.6 267.3,78.5 			"/>
+		</g>
+	</g>
+	<g id="Connection_Flange_Motor">
+		<rect id="Shape_5_" x="144.1" y="31" class="st0" width="16.1" height="129.9"/>
+		<rect id="Reflection_7_" x="144.7" y="44.3" class="st1" width="15.1" height="22.1"/>
+	</g>
+	<path id="Devider_Lines" class="st5" d="M150.7,31.3v129.2 M228.1,35.6v120.8"/>
+	<path id="Reflection_Lines_1_" class="st1" d="M151.1,160.6V31.3h0.7v129.2h-0.7V160.6z M228.5,156.4V35.6h0.7v120.8H228.5z"/>
+	<g id="Fixings">
+		<g id="Bottom">
+			<rect id="Connection_Piece_2_" x="219" y="143.4" class="st3" width="9.1" height="9.2"/>
+			<path id="Hollow_2_" class="st3" d="M228.1,149.1c10.9,0,19.8-1.3,19.8-2.9c0-1.6-8.9-2.9-19.8-2.9V149.1z"/>
+			<g id="Nut_4_">
+				<rect id="Shape_Side_Underneath_4_" x="228.1" y="149.7" class="st3" width="3" height="1.7"/>
+				<rect id="Shape_Side_Middle_5_" x="228.1" y="146.3" class="st3" width="3" height="3.4"/>
+				<rect id="Shape_Side_Top_4_" x="228.1" y="144.7" class="st3" width="3" height="1.6"/>
+			</g>
+		</g>
+		<g id="Middle">
+			<rect id="Connection_Piece_1_" x="219" y="118.6" class="st0" width="9.1" height="9.2"/>
+			<path id="Hollow_1_" class="st0" d="M228.1,126.1c10.9,0,19.8-1.7,19.8-3.7c0-2.1-8.9-3.7-19.8-3.7V126.1z"/>
+			<g id="Nut_1_">
+				<rect id="Shape_Side_Underneath_3_" x="228.1" y="124.9" class="st0" width="3" height="1.7"/>
+				<rect id="Shape_Side_Middle_4_" x="228.1" y="121.5" class="st0" width="3" height="3.4"/>
+				<rect id="Shape_Side_Top_3_" x="228.1" y="119.9" class="st0" width="3" height="1.6"/>
+			</g>
+		</g>
+		<g id="Top">
+			<rect id="Connection_Piece" x="219" y="91.4" class="st0" width="9.1" height="9.2"/>
+			<path id="Hollow" class="st0" d="M228.1,100.5c10.9,0,19.8-2.1,19.8-4.6s-8.9-4.6-19.8-4.6V100.5z"/>
+			<g id="Nut">
+				<rect id="Shape_Side_Underneath_1_" x="228.1" y="97.6" class="st0" width="3" height="1.7"/>
+				<rect id="Shape_Side_Middle_3_" x="228.1" y="94.2" class="st0" width="3" height="3.4"/>
+				<rect id="Shape_Side_Top_1_" x="228.1" y="92.6" class="st0" width="3" height="1.6"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Base">
+	<rect id="Connection_Pump_1_" x="160.2" y="130.6" class="st0" width="49.3" height="36.7"/>
+	<g id="Fixing_Nuts">
+		<g id="Nut_2_">
+			<rect id="Shape_Side_Right_2_" x="173" y="158.5" class="st0" width="2.5" height="4"/>
+			<rect id="Shape_Side_Middle_1_" x="168" y="158.5" class="st0" width="5" height="4"/>
+			<rect id="Shape_Side_Left_2_" x="165.5" y="158.5" class="st0" width="2.5" height="4"/>
+		</g>
+		<g id="Nut_3_">
+			<rect id="Shape_Side_Right_3_" x="201.7" y="158.5" class="st0" width="2.5" height="4"/>
+			<rect id="Shape_Side_Middle_2_" x="196.7" y="158.5" class="st0" width="5" height="4"/>
+			<rect id="Shape_Side_Left_3_" x="194.2" y="158.5" class="st0" width="2.5" height="4"/>
+		</g>
+	</g>
+	<polygon id="U-Profile" class="st3" points="209.5,139.8 209.5,162.5 160.2,162.5 160.2,139.8 150.7,139.8 150.7,172 219,172 
+		219,139.8 	"/>
+	<rect id="Ground_Plate" x="58" y="172" class="st3" width="161" height="14.6"/>
+	<path id="Reflection_Lines" class="st6" d="M58.4,172.8h160.2 M160.6,162.5h48.9v-22.7h9.2 M159.8,139.8h-9.1v31.8"/>
+</g>
+</svg>

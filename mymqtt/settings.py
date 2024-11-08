@@ -19,6 +19,17 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import environ
+
+
+
+env = environ.Env()
+environ.Env.read_env()
+
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -26,10 +37,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-c(e$r+4s*06kc89&o3dhv+o1z!42c6u+dlm^-2@m@c=8+hzgm1'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WAR
+# NING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['3.27.217.112','ec2-3-27-217-112.ap-southeast-2.compute.amazonaws.com' ,'mymqtt-y8q5.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','3.27.217.112','ec2-3-27-217-112.ap-southeast-2.compute.amazonaws.com' ,'mymqtt-y8q5.onrender.com']
 
 
 # Application definition
@@ -50,7 +62,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -88,28 +100,40 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-      #  "hosts": [('127.0.0.1', 6379)],     # local host
+       # "hosts": [('127.0.0.1', 6379)],     # local host
         "hosts":  [('rediss://red-csjcit5svqrc73eqrup0:Y3Bc3C9CKTkd53yl33fmX9Luk1ZKxDTt@oregon-redis.render.com:6379')],
         },
     },
 }
 
 
+
+
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+'''
 DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'recipe_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Sisaket1961',
-        'HOST': 'database-1.c5ccs48s4y6j.ap-southeast-2.rds.amazonaws.com', 
+        'NAME': 'recipe_db_vox9',
+        'USER': 'mqtt',
+        'PASSWORD': '',
+        'HOST': '', 
         'PORT': '5432', 
 
     }
 }
+'''
+import dj_database_url
+
+DATABASES = {  
+    'default' : dj_database_url.parse(env('DATABASE_URL'))    
+             
+    } 
+  
 
 
 # Password validation
@@ -163,7 +187,27 @@ STORAGES = {
     },
 }
 
-# Default primary key field type
+
+# Assuming BASE_DIR is already defined at the top of your settings.py
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+          'propagate': True,
+        },
+    },
+}# Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

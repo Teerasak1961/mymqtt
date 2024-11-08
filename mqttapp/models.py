@@ -1,6 +1,6 @@
 from django.db import models
 
-class recipe_db(models.Model):
+class recipe_db_vox9(models.Model):
     id = models.BigAutoField(primary_key=True)
     recipeno   = models.IntegerField(default=0)
     recipename  = models.CharField(max_length=255)

@@ -1,0 +1,30 @@
+.txt{
+   margin-left: 80px;
+   
+}
+
+.navbar,.navbar-nav,.nav-item{
+   padding:2px ;
+   
+   
+}
+
+.navbar,.navbar-nav,.nav-but{
+  padding:5px ;
+}
+
+
+
+.date-time{
+  padding: 5px ;
+  color: #fff;
+  border: 2px solid ;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  
+}
+
+
+
+

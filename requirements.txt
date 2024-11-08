@@ -1,4 +1,5 @@
 asgiref==3.8.1
+async-timeout==5.0.0
 attrs==24.2.0
 autobahn==24.4.2
 Automat==24.8.1
@@ -8,7 +9,9 @@ channels-redis==4.2.0
 constantly==23.10.4
 cryptography==43.0.1
 daphne==4.0.0
+dj-database-url==2.3.0
 Django==5.1.2
+django-environ==0.11.2
 django-filter==24.3
 gunicorn==23.0.0
 hyperlink==21.0.0
@@ -25,8 +28,8 @@ pyOpenSSL==24.2.1
 python-dotenv==1.0.1
 redis==5.1.1
 service-identity==24.1.0
-setuptools==75.1.0
 sqlparse==0.5.1
+tomli==2.0.2
 Twisted==24.7.0
 txaio==23.1.1
 typing_extensions==4.12.2

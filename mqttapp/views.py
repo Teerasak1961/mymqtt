@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from django.http import JsonResponse
 from .mqtt_service import MqttClient
-from .models import recipe_db
+from .models import recipe_db_vox9
 from .forms import RecipeForm
 from .filters import RecipeFilter
 
@@ -75,7 +75,7 @@ def recipe(request):
         form = RecipeForm()
 
     # Filter processing
-    recipe_filter = RecipeFilter(request.GET, queryset=recipe_db.objects.all())
+    recipe_filter = RecipeFilter(request.GET, queryset=recipe_db_vox9.objects.all())
     
     context = {
         'form': form,
@@ -95,13 +95,13 @@ def addrecipe(request):
     return render(request, 'mqttapp/addrecipe.html', {'form': form})
 
 def delete_recipe(request, id):
-    del_recipe = get_object_or_404(recipe_db, id=id)
+    del_recipe = get_object_or_404(recipe_db_vox9, id=id)
     # Delete the recipe
     del_recipe.delete()
     return redirect('recipe')
 
 def edit_recipe(request, pk):
-    mixing = get_object_or_404(recipe_db, pk=pk)  # Get the recipe by ID
+    mixing = get_object_or_404(recipe_db_vox9, pk=pk)  # Get the recipe by ID
 
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=mixing)

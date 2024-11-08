@@ -1,5 +1,5 @@
 import django_filters
-from .models import recipe_db
+from .models import recipe_db_vox9
 
 class RecipeFilter(django_filters.FilterSet):
     recipeno = django_filters.NumberFilter()
@@ -9,5 +9,5 @@ class RecipeFilter(django_filters.FilterSet):
     mixingtime = django_filters.NumberFilter()
 
     class Meta:
-        model = recipe_db
+        model = recipe_db_vox9
         fields = ['recipeno', 'recipename', 'mixingspeed', 'mixingtemp', 'mixingtime']
